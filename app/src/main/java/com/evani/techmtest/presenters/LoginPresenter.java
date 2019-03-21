@@ -8,9 +8,11 @@ import com.evani.techmtest.model.ILogin;
 import com.evani.techmtest.model.LoginModel;
 import com.evani.techmtest.view.ILoginView;
 
+import java.util.List;
 
 
 public class LoginPresenter implements ILoginPresenter {
+
     ILoginView iLoginView;
     ILogin model;
     Handler handler;
@@ -36,6 +38,8 @@ public class LoginPresenter implements ILoginPresenter {
             }
         }, 2000);
     }
+
+
 
     private void initModel(){
         model = new LoginModel("test","test");

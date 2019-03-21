@@ -27,21 +27,13 @@ public class LoginModel implements ILogin{
     public int checkValidity(String userName, String password) {
 
         if (null != userName || null != password || !userName.isEmpty() ||!password.isEmpty()
-            || !userName.equals(getUserName()) || !password.equals(getPassword())) {
-            return -1;
+            || !userName.equalsIgnoreCase(userName) || !password.equalsIgnoreCase(password)) {
+            return 0;
         }
 
-        return 0;
+        return -1;
     }
 
-    @Override
-    public List<String> displayData() {
-        List<String> list = new ArrayList<>();
-        for (int i = 0; i < 20 ; i++) {
-            list.add(" Sample "+i);
-        }
-        return list;
-    }
 
 
 }

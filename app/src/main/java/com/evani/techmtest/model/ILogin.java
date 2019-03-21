@@ -9,5 +9,5 @@ public interface ILogin {
 
     int checkValidity(String userName,String password);
 
-    List<String> displayData();
+
 }

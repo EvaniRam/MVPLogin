@@ -1,5 +1,6 @@
 package com.evani.techmtest.view;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,9 @@ import com.evani.techmtest.R;
 import com.evani.techmtest.presenters.ILoginPresenter;
 import com.evani.techmtest.presenters.LoginPresenter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LoginActivity extends AppCompatActivity implements ILoginView , View.OnClickListener {
 
     private EditText userName;
@@ -19,6 +23,8 @@ public class LoginActivity extends AppCompatActivity implements ILoginView , Vie
 
     //presenter reference
     private ILoginPresenter loginPresenter;
+
+    List<String> data = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +41,8 @@ public class LoginActivity extends AppCompatActivity implements ILoginView , Vie
 
         //initialising Presenter
         loginPresenter = new LoginPresenter(this);
+
+        data = new ArrayList<>();
 
     }
 
@@ -53,6 +61,10 @@ public class LoginActivity extends AppCompatActivity implements ILoginView , Vie
         btnLogin.setEnabled(true);
         if (result){
             Toast.makeText(this,"Login Success", Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(this,MyRecyclerListActivity.class);
+            startActivity(intent);
+
         }
         else
             Toast.makeText(this,"Login Fail, code = " + code,Toast.LENGTH_SHORT).show();
