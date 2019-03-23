@@ -1,5 +1,5 @@
 # MVPLogin
-Simple login application built using MVP (Model-View-Presenter)architecture pattern.On Successful login user is redireced to new activity with Recyclerview
+Simple login application built using MVP (Model-View-Presenter)architecture pattern.On Successful login user is redirected to new activity with Recyclerview
 
 
   
